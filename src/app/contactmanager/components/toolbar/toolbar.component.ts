@@ -22,6 +22,10 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  Logout(){
+    this.router.navigate(['/login']);
+  }
+
   openAddContactDialog(): void {
     let dialogRef = this.dialog.open(NewContactDialogComponent, {
       width: '450px'
