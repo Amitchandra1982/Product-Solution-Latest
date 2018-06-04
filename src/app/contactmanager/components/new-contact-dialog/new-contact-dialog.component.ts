@@ -23,6 +23,7 @@ export class NewContactDialogComponent implements OnInit {
 
   user: User;
   owner: string = '';
+  isProcessing= false;
   product: Product;
   constructor(
     private dialogRef: MatDialogRef<NewContactDialogComponent>,
@@ -47,6 +48,7 @@ export class NewContactDialogComponent implements OnInit {
   }
 
   save() {
+    this.isProcessing=true;
     console.log("submit button clicked")
     this.productService.addProduct(this.product)
       .subscribe(data => {
@@ -54,9 +56,11 @@ export class NewContactDialogComponent implements OnInit {
         this.tostr.success('Added Succcessfully', 'Product Added');
         this.dialogRef.close(this.product);
         this.router.navigate(['/home']);
+        this.isProcessing=false;
         //this.noteComponent.ngOnInit();
         // console.log("value of e"+ JSON.stringify(e));
       }, err => {
+        this.isProcessing=false;
         if (err.status == 200) {
           this.tostr.success('Added Succcessfully', 'Product Added');
           console.log("Trx ID is " + err.error.text);
@@ -67,6 +71,7 @@ export class NewContactDialogComponent implements OnInit {
           this.router.navigate(['/home']);
 
         }
+        
 
         // console.log("value of e"+ JSON.stringify(e));
         this.dialogRef.close(this.product);

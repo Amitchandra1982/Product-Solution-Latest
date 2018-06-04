@@ -48,7 +48,7 @@ export class TransferProductComponent implements OnInit {
     this.isProcessing=true;
     console.log("submit button clicked")
     this.product.ownership=this.selected;
-    this.product.status= this.selected +' '+'Queueeeeeeeeeeeeeeeeeeeee';
+    this.product.status= this.selected +' '+'Queue';
     this.productService.transferProduct(this.product)
       .subscribe(data => {
         console.log("This is response data" + data);

@@ -120,7 +120,8 @@ export class NotesComponent implements OnInit {
 
         if (data.Batches) {
           data.Batches.forEach(element => {
-            if (element.status === 'In Manufacturer Queue') {
+            if (element.status === 'In Manufacturer Queue' || element.status==='Distributer_Pune Queue'
+            || element.status==='Retailer_Hadapsar Queue') {
               this.product = new Product;
               this.product.batchNumber = element.batchid;
               this.product.barcode = element.barcode;

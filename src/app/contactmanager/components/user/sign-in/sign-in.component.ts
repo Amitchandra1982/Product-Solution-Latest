@@ -38,28 +38,7 @@ export class SignInComponent implements OnInit {
         console.log("This is password: "+ password)
         console.log("This is password ---Storage : "+ localStorage.getItem('password'))
         this.router.navigate(['/home']);
-        // this.router.navigate(['/manufacturer'])
-      // }
-      // else if (password == "org2") {
-      //   localStorage.setItem('password', password)
-      //   localStorage.setItem('owner', userName)
-      //   console.log("User Name is : " + userName)
-      //   console.log("This is password: "+ password)
-      //   console.log("This is password ---Storage : "+ localStorage.getItem('password'))
-      //   this.router.navigate(['/distributer'])
-      // } else if (password == "org3") {
-      //   localStorage.setItem('owner',userName)
-      //   localStorage.setItem('password', password)
-      //   console.log("This is password: "+ password)
-      //   console.log("This is password ---Storage : "+ localStorage.getItem('password'))
-      //   this.router.navigate(['/retailer'])
-      // } else {
-      //   localStorage.setItem('owner', userName)
-      //   localStorage.setItem('password', password)
-      //   console.log("This is password***********: "+ password)
-      //   console.log("This is password ---Storage : "+ localStorage.getItem('password'))
-      //   this.router.navigate(['/home']);
-      // }
+        
     },
       (err: HttpErrorResponse) => {
         this.isLoginError = true;

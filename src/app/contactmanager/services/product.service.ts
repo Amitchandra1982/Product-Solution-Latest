@@ -15,9 +15,10 @@ export class ProductService {
   product = new Product;
   transferingProduct= new Product;
   selectedOption='1';
+  productHistory:string='';
 
 // Home:192.168.31.165 --// 9.193.16.48
-private _url: string ='http://9.193.16.48:4000/channels/mgrchannel/chaincodes/mycc?peer=peer1&fcn=query&args=%5B%22XXX%22%5D'//'http://9.193.16.48:4000/channels/mgrchannel/chaincodes/mycc?peer=peer1&fcn=query&args=%5B%22'//// 
+private _url: string ='http://9.193.16.48.165:4000/channels/mgrchannel/chaincodes/mycc?peer=peer1&fcn=query&args=%5B%22XXX%22%5D'//'http://9.193.16.48:4000/channels/mgrchannel/chaincodes/mycc?peer=peer1&fcn=query&args=%5B%22'//// 
 private authentication_url: string ='http://9.193.16.48:4000/users'//'http://192.168.31.165:4000/users'// ;
 getNodeData(): Observable<Product[]> {
   return this.http.get<Product[]>(this._url)
